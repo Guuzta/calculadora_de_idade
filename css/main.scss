@@ -1,7 +1,94 @@
+@import 'variables';
+@import 'default';
+
 body {
-    background-color: red;
+    background-color: $bg-color;
+    font-family: "Poppins", sans-serif;
 }
 
-h1 {
-    color: white;
+#calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main {
+    position: relative;
+    max-width: 50%;
+}
+
+#dataInput {
+    display: flex;
+    
+    label {
+
+        font-weight: 700;
+        color: $label-color;
+        font-size: 14px;
+        letter-spacing: 4px;
+
+        input::-webkit-input-placeholder {
+            font-size: 20px;
+
+        }
+
+        input {
+            display: block;
+            outline: none;
+            border: 1px solid $input-outline;
+            border-radius: 5px;
+            width: 70%;
+            padding: 15px 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+    }
+
+   
+}
+
+#dataOutput {
+    
+    margin-top: 100px;
+
+    ul {
+
+        width: fit-content;
+        font-size: 90px;
+        line-height: 80px;
+
+        li {
+            color: $secondary-color;
+            list-style: none;
+            font-weight: 800;
+            font-style: italic;
+
+            
+            span {
+                color: $primary-color;
+            }
+        }
+    
+    }
+
+}
+
+
+#button {
+    background-color: #854dff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 110px;
+    right: 0;
+    cursor: pointer;
+
+    img {
+        width: 45px;
+    }
 }
