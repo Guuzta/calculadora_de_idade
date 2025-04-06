@@ -29,12 +29,20 @@ body {
 
 #dataInput {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#dataInput #columnForm {
+  display: flex;
 }
 #dataInput label {
   font-weight: 700;
   color: #716f6f;
   font-size: 14px;
   letter-spacing: 4px;
+}
+#dataInput label.error {
+  color: #ff5757;
 }
 #dataInput label input::-webkit-input-placeholder {
   font-size: 20px;
@@ -49,9 +57,26 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+#dataInput label input.error {
+  border: 1px solid #ff5757;
+}
+#dataInput label input:focus {
+  border: 1px solid #854dff;
+}
+#dataInput label span {
+  margin-top: 10px;
+  display: none;
+  color: #ff5757;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: normal;
+}
+#dataInput label span.visible {
+  display: block;
+}
 
 #dataOutput {
-  margin-top: 100px;
+  margin-top: 10px;
 }
 #dataOutput ul {
   width: -moz-fit-content;
@@ -71,16 +96,64 @@ body {
 
 #button {
   background-color: #854dff;
+  border: none;
+  margin-top: 50px;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 110px;
-  right: 0;
   cursor: pointer;
 }
 #button img {
   width: 45px;
+}
+#button:hover {
+  background-color: #000000;
+  transition: all 300ms ease;
+}
+
+@media (max-width: 500px) {
+  #main {
+    max-width: 80%;
+  }
+  #columnForm label {
+    font-weight: 700;
+    color: #716f6f;
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+  #columnForm label input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  #columnForm label input {
+    display: block;
+    outline: none;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    width: 50%;
+    padding: 15px 10px;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  #dataInput {
+    align-items: center;
+  }
+  #dataInput span {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  #dataOutput ul {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  #button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 55px;
+    height: 55px;
+  }
+  #button img {
+    width: 25px;
+  }
 }/*# sourceMappingURL=main.css.map */
